@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ಜಿಂಗಾ ಲಕಾ ಲಕಾ ಲಕಾ </title>
+    <title>Vishnu Karnath</title>
+    <!-- Add Content Security Policy but allow font loading -->
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
+    script-src 'self' https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com 'unsafe-inline'; 
+    style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; 
+    img-src 'self' data:; 
+    font-src 'self' https://cdnjs.cloudflare.com https://fonts.gstatic.com; 
+    connect-src 'self' https://docs.google.com https://www.google.com; 
+    frame-src https://www.google.com; 
+    object-src 'none';
+  ">
+    <!-- Add referrer policy -->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Force HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="styles.css">
+    <!-- Load Font Awesome without SRI first to make sure it works in all browsers -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="script.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LdPK_8qAAAAAGHFnvhVZ5-_mEN3o0Wbn2Q10mVf"></script>
+
 </head>
 <body class="light-mode">
     <div class="theme-toggle">
@@ -38,7 +56,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="glitch" data-text="Hi, I'm Vishnu Karanth">Hi, I'm Vishnu Karanth</h1>
-                <!-- <p>Computer Science & Engineering Student</p> -->
+                <p>Computer Science & Engineering Student</p>
                 <div class="hero-cta">
                     <a href="#about" class="btn">Learn More</a>
                     <a href="Vishnu Karanth Resume Feb.pdf" id="download-cv-btn">Download CV</a>
@@ -335,6 +353,7 @@
         </div>
     </section>
 
+
     <section id="contact">
         <div class="container">
             <h2 class="section-title">Contact Me</h2>
@@ -343,13 +362,9 @@
                     <div class="contact-card">
                         <i class="fas fa-envelope"></i>
                         <h3>Email</h3>
-                        <p>vishnukaranth04@gmail.com</p>
+                        <!-- Email obfuscation -->
+                        <p id="email-display">vishnukaranth04@gmail.com</p>
                     </div>
-                    <!-- <div class="contact-card">
-                        <i class="fas fa-phone"></i>
-                        <h3>Phone</h3>
-                        <p>+1 (123) 456-7890</p>
-                    </div> -->
                     <div class="contact-card">
                         <i class="fas fa-map-marker-alt"></i>
                         <h3>Location</h3>
@@ -360,7 +375,8 @@
                         <a href="https://github.com/VishnuKaranth" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="kedin.com/in/vishnu-karanth-3ba772229" target="_blank" rel="noopener noreferrer">
+                        <!-- Corrected LinkedIn URL -->
+                        <a href="https://www.linkedin.com/in/vishnu-karanth-3ba772229" target="_blank" rel="noopener noreferrer">
                             <i class="fab fa-linkedin"></i>
                         </a>
                         <a href="https://www.instagram.com/vishnu.karanth" target="_blank" rel="noopener noreferrer">
@@ -369,40 +385,129 @@
                     </div>
                 </div>
 
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="submit-btn">Send Message</button>
-                        <div id="form-status"></div>
-                    </form>
+                    <div class="contact-form">
+                        <form id="contactForm" action="/submit-form" method="POST">
+                            <!-- Add CSRF token -->
+                            <input type="hidden" name="csrf_token" id="csrf_token" value="">
+                            
+                            <!-- Honeypot field to catch bots -->
+                            <div class="form-group" style="display:none;">
+                                <input type="text" name="honeypot" id="honeypot" autocomplete="off">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                            
+                            <!-- Add reCAPTCHA properly -->
+                            <div class="g-recaptcha" data-sitekey="6LdPK_8qAAAAAGHFnvhVZ5-_mEN3o0Wbn2Q10mVf"></div>
+                            
+                            <button type="submit" class="submit-btn">Send Message</button>
+                            <div id="form-status"></div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Vishnu Karanth. All Rights Reserved.</p>
-                <a href="#" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <p>&copy; 2025 Vishnu Karanth. All Rights Reserved.</p>
+                    <a href="#" id="back-to-top"><i class="fas fa-arrow-up"></i></a>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</body>
-</html>
+        <!-- Add scripts without SRI initially to ensure compatibility -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+        <!-- Add CSRF token generation script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Generate CSRF token
+                const generateToken = () => {
+                    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                    let token = '';
+                    for (let i = 0; i < 32; i++) {
+                        token += chars.charAt(Math.floor(Math.random() * chars.length));
+                    }
+                    return token;
+                };
+                
+                // Set CSRF token and store in session storage
+                const csrfToken = generateToken();
+                document.getElementById('csrf_token').value = csrfToken;
+                sessionStorage.setItem('csrf_token', csrfToken);
+                
+                // Form submission handler with basic security checks
+                document.getElementById('contactForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Check honeypot field
+                    if (document.getElementById('honeypot').value !== '') {
+                        console.log('Bot detected');
+                        return false;
+                    }
+                    
+                    // Check reCAPTCHA
+                    const recaptchaResponse = grecaptcha.getResponse();
+                    if (recaptchaResponse.length === 0) {
+                        document.getElementById('form-status').textContent = 'Please complete the reCAPTCHA.';
+                        return false;
+                    }
+                    
+                    // Sanitize inputs (basic client-side)
+                    const sanitizeInput = (input) => {
+                        return input.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    };
+                    
+                    const formData = new FormData(this);
+                    const sanitizedFormData = new FormData();
+                    
+                    for (const [key, value] of formData.entries()) {
+                        if (typeof value === 'string') {
+                            sanitizedFormData.append(key, sanitizeInput(value));
+                        } else {
+                            sanitizedFormData.append(key, value);
+                        }
+                    }
+                    
+                    // Submit form with fetch API
+                    fetch('/submit-form', {
+                        method: 'POST',
+                        headers: {
+                            'X-CSRF-Token': csrfToken
+                        },
+                        body: sanitizedFormData
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            document.getElementById('form-status').textContent = 'Message sent successfully!';
+                            document.getElementById('contactForm').reset();
+                            grecaptcha.reset();
+                        } else {
+                            document.getElementById('form-status').textContent = 'Error sending message. Please try again.';
+                        }
+                    })
+                    .catch(error => {
+                        document.getElementById('form-status').textContent = 'An error occurred. Please try again later.';
+                        console.error('Error:', error);
+                    });
+                });
+            });
+        </script>
+        </body>
+        </html>
