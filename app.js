@@ -12,9 +12,9 @@ app.use((req, res, next) => {
     'Content-Security-Policy',
     "default-src 'self'; " +
     "script-src 'self' https://cdnjs.cloudflare.com https://www.google.com https://www.gstatic.com 'unsafe-inline'; " +
-    "style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; " +
+    "style-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; " +
     "img-src 'self' data:; " +
-    "font-src 'self' https://cdnjs.cloudflare.com; " +
+    "font-src 'self' https://cdnjs.cloudflare.com https://fonts.googleapis.com; " +
     "connect-src 'self' https://docs.google.com; " +  // ✅ Allow Google Forms
     "frame-src https://www.google.com; " +
     "object-src 'none';"

@@ -59,7 +59,7 @@ router.post('/submit-form', formLimiter, [
     const recaptchaResponse = await fetch('https://www.google.com/recaptcha/api/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: `secret=6LdPK_8qAAAAANBm3zdpEwyFdkAI-gGCZlHT6VgH&response=${req.body['g-recaptcha-response']}`
+      body: `secret=YOUR_RECAPTCHA_SECRET_KEY&response=${req.body['g-recaptcha-response']}`
     }).then(response => response.json());
 
     if (!recaptchaResponse.success) {

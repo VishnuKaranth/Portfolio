@@ -96,68 +96,69 @@ backToTop.addEventListener('click', (e) => {
     });
 });
 
-// Google Forms Submission
-contactForm.addEventListener('submit', async (e) => {
+contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     // Get input values
-    const nameInput = document.getElementById('name').value;
-    const emailInput = document.getElementById('email').value;
-    const subjectInput = document.getElementById('subject').value;
-    const messageInput = document.getElementById('message').value;
+    const nameInput = document.getElementById("name").value;
+    const emailInput = document.getElementById("email").value;
+    const subjectInput = document.getElementById("subject").value;
+    const messageInput = document.getElementById("message").value;
 
     // Validate fields
     if (!nameInput || !emailInput || !subjectInput || !messageInput) {
-        formStatus.textContent = 'Please fill in all fields';
-        formStatus.style.color = 'red';
+        formStatus.textContent = "Please fill in all fields";
+        formStatus.style.color = "red";
         return;
     }
 
     // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(emailInput)) {
-        formStatus.textContent = 'Please enter a valid email address';
-        formStatus.style.color = 'red';
+        formStatus.textContent = "Please enter a valid email address";
+        formStatus.style.color = "red";
         return;
     }
 
-    // Google Form URL (Replace 'your-form-id' with your actual form ID)
-    const googleFormURL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc4A7GB_3xW5keMIjwWbmZyZIm6hJg_PSc7Df7QTz0-2yhfpw/formResponse";
+    // Google Form URL
+    const googleFormURL =
+        "https://docs.google.com/forms/u/0/d/e/1FAIpQLSc4A7GB_3xW5keMIjwWbmZyZIm6hJg_PSc7Df7QTz0-2yhfpw/formResponse";
 
     // Replace with actual entry IDs from Google Form
-    const formData = new URLSearchParams();
-    formData.append("entry.928483256", nameInput);   // Name Entry ID
-    formData.append("entry.150071011", emailInput);  // Email Entry ID
-    formData.append("entry.706009973", subjectInput); // Subject Entry ID
-    formData.append("entry.497615306", messageInput); // Message Entry ID
+    const formData = new FormData();
+    formData.append("entry.928483256", nameInput);
+    formData.append("entry.150071011", emailInput);
+    formData.append("entry.706009973", subjectInput);
+    formData.append("entry.497615306", messageInput);
 
     // Display sending message
-    formStatus.textContent = 'Sending...';
-    formStatus.style.color = 'blue';
+    formStatus.textContent = "Sending...";
+    formStatus.style.color = "blue";
 
     try {
-        // Submit data using Fetch API
+        // Send data to Google Form (Note: No response handling)
         await fetch(googleFormURL, {
             method: "POST",
-            mode: "no-cors", // Google Forms requires no-cors mode
+            mode: "no-cors",
             body: formData,
         });
 
-        // Success message
-        formStatus.textContent = 'Message sent successfully!';
-        formStatus.style.color = 'green';
+        // Show success message immediately
+        formStatus.textContent = "Message sent successfully!";
+        formStatus.style.color = "green";
         contactForm.reset();
 
         // Reset status after 5 seconds
         setTimeout(() => {
-            formStatus.textContent = '';
+            formStatus.textContent = "";
         }, 5000);
     } catch (error) {
-        // Error handling
-        formStatus.textContent = 'An error occurred. Please try again.';
-        formStatus.style.color = 'red';
+        // No error handling for Google Forms
+        formStatus.textContent = "An error occurred. Please try again.";
+        formStatus.style.color = "red";
     }
 });
+
 
 
 // Download CV - Replace with actual download functionality
