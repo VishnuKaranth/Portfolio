@@ -166,7 +166,7 @@ downloadCvBtn.addEventListener('click', (e) => {
     e.preventDefault();
     
     // Create download link for CV
-    const cvUrl = 'assets/files/Vishnu Karanth Resume.pdf'; // Update with your actual CV file path
+    const cvUrl = 'assets/files/Vishnu Karanth Resume March.pdf'; // Update with your actual CV file path
     
     // Create a temporary link element
     const tempLink = document.createElement('a');
