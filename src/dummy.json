@@ -1,0 +1,198 @@
+{
+  "about": {
+    "name": "Vishnu Karanth",
+    "title": "Software Engineer | Full-Stack Developer",
+    "subTitle": "I build web apps, AI-powered tools, and interactive user experiences",
+    "description": "I am a Computer Science graduate with hands-on experience in building full-stack applications using MERN, MEVN, Django, and React. I enjoy building practical, scalable, and user-focused applications.",
+    "quote": "Building consistently, learning constantly",
+    "exp_year": "0",
+    "address": "Bengaluru, India",
+    "some_total": "20",
+    "phoneNumber": "+91-9740063435",
+    "contactEmail": "vishnukaranth04@gmail.com",
+    "avatar": {
+      "public_id": "avatarpic1",
+      "url": "https://profile-photos-vishnu.s3.ap-south-1.amazonaws.com/PersonalPhoto.jpg"
+    },
+    "alternateAvatars": [
+      {
+        "_id": "avatarpic2",
+        "public_id": "avatarpic3",
+        "url": "https://profile-photos-vishnu.s3.ap-south-1.amazonaws.com/PersonalPhoto.jpg"
+      }
+    ]
+  },
+
+  "_id": "adminvishnu1",
+  "username": "VishnuKaranth",
+  "email": "vishnukaranth04@gmail.com",
+  "role": "admin",
+
+  "funStats": [
+    { "_id": "1", "value": "20+", "label": "Projects Built", "icon": "🚀" },
+    { "_id": "2", "value": "1200+", "label": "Hours of Coding", "icon": "⌛" }
+  ],
+
+  "timeline": [
+    {
+      "_id": "Exp2.1",
+      "sequence": 2,
+      "company_name": "Rooman Technologies",
+      "summary": "",
+      "jobTitle": "Intern",
+
+      "jobLocation": "Bengaluru, KA",
+      "startDate": "2023-11-13T00:00:00.000Z",
+      "endDate": "2023-11-13T00:00:00.000Z",
+      "bulletPoints": [
+        "Developed REST APIs and integrated third-party services.",
+        "Built responsive UIs using React.",
+        "Integrated ML models with backend systems.",
+        "Optimized database queries and improved performance."
+      ],
+      "forEducation": true,
+      "enabled": true
+    },
+    {
+      "_id": "Exp2.2",
+      "sequence": 2,
+      "company_name": "Rooman Technologies",
+      "jobTitle": "Intern",
+      "summary": "",
+      "jobLocation": "Bengaluru, KA",
+      "startDate": "2023-11-13T00:00:00.000Z",
+      "endDate": "2023-11-13T00:00:00.000Z",
+      "bulletPoints": [
+        "Developed REST APIs and integrated third-party services.",
+        "Built responsive UIs using React.",
+        "Integrated ML models with backend systems.",
+        "Optimized database queries and improved performance."
+      ],
+      "forEducation": false,
+      "enabled": true
+    },
+    {
+      
+      "sequence": 1,
+      "company_name": "Pentagon Space",
+      "jobTitle": "Apprentice",
+      "summary": "",
+      "jobLocation": "Bangalore, KA",
+      "startDate": "2023-11-13T00:00:00.000Z",
+      "endDate": "2023-11-13T00:00:00.000Z",
+      "bulletPoints": [
+        "Built full-stack applications using Django and MySQL.",
+        "Implemented APIs and built UI components.",
+        "Worked collaboratively using Git and Agile."
+      ],
+      "forEducation": true,
+      "enabled": true,
+      "_id": "Exp1.1"
+    },
+    {
+      
+      "sequence": 1,
+      "company_name": "Pentagon Space",
+      "jobTitle": "Apprentice",
+      "summary": "",
+      "jobLocation": "Bangalore, KA",
+      "startDate": "2023-11-13T00:00:00.000Z",
+      "endDate": "2023-11-13T00:00:00.000Z",
+      "bulletPoints": [
+        "Built full-stack applications using Django and MySQL.",
+        "Implemented APIs and built UI components.",
+        "Worked collaboratively using Git and Agile."
+      ],
+      "forEducation": false,
+      "enabled": true,
+      "_id": "Exp1.2"
+    }
+  ],
+
+  "skills": [
+    { "name": "HTML", "percentage": 98, "enabled": true, "sequence": 1, "image": { "public_id": "Skill1", "url": "" }, "_id": "Sk1" },
+    { "name": "CSS", "percentage": 97, "enabled": true, "sequence": 2, "image": { "public_id": "Skill2", "url": "" }, "_id": "Sk2" },
+    { "name": "Javascript", "percentage": 95, "enabled": true, "sequence": 3, "image": { "public_id": "Skill3", "url": "" }, "_id": "Sk3" },
+    { "name": "Tailwind", "percentage": 99, "enabled": true, "sequence": 4, "image": { "public_id": "Skill4", "url": "" }, "_id": "Sk4" },
+    { "name": "React", "percentage": 90, "enabled": true, "sequence": 5, "image": { "public_id": "Skill5", "url": "" }, "_id": "Sk5" },
+    { "name": "Next.js", "percentage": 90, "enabled": true, "sequence": 6, "image": { "public_id": "Skill6", "url": "" }, "_id": "Sk6" },
+    { "name": "TypeScript", "percentage": 90, "enabled": true, "sequence": 7, "image": { "public_id": "Skill7", "url": "" }, "_id": "Sk7" },
+    { "name": "Python", "percentage": 86, "enabled": true, "sequence": 8, "image": { "public_id": "Skill8", "url": "" }, "_id": "Sk8" },
+    { "name": "Node.js", "percentage": 92, "enabled": true, "sequence": 9, "image": { "public_id": "Skill9", "url": "" }, "_id": "Sk9" },
+    { "name": "MongoDB", "percentage": 70, "enabled": true, "sequence": 10, "image": { "public_id": "Skill10", "url": "" }, "_id": "Sk10" }
+  ],
+
+  "youtube": [],
+
+  "projects": [
+    {
+      "_id": "project_1",
+      "title": "Music Generator",
+      "description": "A modern music generator web app built using Python, Next.js, AWS, and PostgreSQL.",
+      "liveurl": "https://musicgenerator-phi.vercel.app/",
+      "githuburl": "#",
+      "techStack": ["Python", "Next.js", "AWS", "PostgreSQL"],
+      "enabled": true,
+      "sequence": 1,
+      "image": {
+        "public_id": "proid_1",
+        "url": "https://via.placeholder.com/400x250?text=Project"
+      }
+    }
+  ],
+
+  "social_handles": [
+    {
+      "_id": "social_1",
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/vishnu.karanth/",
+      "enabled": true,
+      "image": { "public_id": "insta1", "url": "" }
+    },
+    {
+      "_id": "social_2",
+      "platform": "LinkedIn",
+      "url": "https://linkedin.com/in/vishnu-karanth",
+      "enabled": true,
+      "image": { "public_id": "link1", "url": "" }
+    },
+    {
+      "_id": "socail_3",
+      "platform": "Github",
+      "url": "https://github.com/vishnuKaranth/",
+      "enabled": true,
+      "image": { "public_id": "github1", "url": "" }
+    }
+  ],
+
+  "services": [
+    {
+      "_id": "service_1",
+      "name": "Portfolio Websites",
+      "charge": "$99",
+      "desc": "Responsive personal or portfolio websites built using React or Next.js.",
+      "enabled": true,
+      "image": { "public_id": "serv1", "url": "https://via.placeholder.com/300?text=Portfolio" }
+    },
+    {
+      "_id": "service_2",
+      "name": "Full-Stack Web Apps",
+      "charge": "$149",
+      "desc": "Basic MERN/MEVN full-stack apps with authentication and CRUD.",
+      "enabled": true,
+      "image": { "public_id": "serv2", "url": "https://via.placeholder.com/300?text=Fullstack" }
+    },
+    {
+      "_id": "service_3",
+      "name": "UI/UX to Code",
+      "charge": "$79",
+      "desc": "Convert Figma designs into responsive UI using React + Tailwind.",
+      "enabled": true,
+      "image": { "public_id": "serv3", "url": "https://via.placeholder.com/300?text=UIUX" }
+    }
+  ],
+
+  "createdAt": "",
+  "updatedAt": "",
+  "refreshToken": ""
+}
