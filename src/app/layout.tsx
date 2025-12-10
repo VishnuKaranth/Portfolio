@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { VariantProvider } from "@/utils/hooks";
 import { constructMetadata } from "@/utils";
+import WIPPopup from "@/components/WIPPopup";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en" className="dark" suppressHydrationWarning>
       <head />
       <body className={poppins.className}>
-        <VariantProvider>{children}</VariantProvider>
+        
+        <VariantProvider>
+         <WIPPopup/> {children}</VariantProvider>
       </body>
     </html>
   );
