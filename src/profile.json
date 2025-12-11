@@ -20,7 +20,13 @@
         "public_id": "avatarpic3",
         "url": "https://profile-photos-vishnu.s3.ap-south-1.amazonaws.com/PersonalPhoto.jpg"
       }
-    ]
+    ],
+    "resume": [
+    {
+      "public_id": "resume1",
+      "url": "https://profile-photos-vishnu.s3.ap-south-1.amazonaws.com/VishnuKaranth_Dec2025.pdf"
+    }
+  ]
   },
 
   "_id": "adminvishnu1",
@@ -191,6 +197,7 @@
       "image": { "public_id": "serv3", "url": "https://via.placeholder.com/300?text=UIUX" }
     }
   ],
+  
 
   "createdAt": "",
   "updatedAt": "",

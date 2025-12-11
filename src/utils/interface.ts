@@ -28,6 +28,12 @@ export interface About {
   phoneNumber: string;
   avatar: Avatar;
   alternateAvatars: unknown[];
+  resume: Resume[];
+}
+
+export interface Resume {
+  public_id: string;
+  url: string;
 }
 
 export interface Avatar {

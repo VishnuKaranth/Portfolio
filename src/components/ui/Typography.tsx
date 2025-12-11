@@ -37,7 +37,7 @@ export const TextReveal = ({ children, className }: TextRevealProps) => {
       onMouseLeave={() => setHover(false)}
       className={cn("relative overflow-hidden whitespace-pre", className)}
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden pointer-events-none">
         {children.split("").map((char, i) => (
           <motion.span
             initial={{ y: 0 }}
@@ -55,7 +55,7 @@ export const TextReveal = ({ children, className }: TextRevealProps) => {
           </motion.span>
         ))}
       </div>
-      <motion.div className="absolute left-0 top-0">
+      <motion.div className="absolute left-0 top-0 pointer-events-none">
         {children.split("").map((char, i) => (
           <motion.span
             initial={{ y: "100%" }}

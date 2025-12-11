@@ -10,7 +10,7 @@ import { Portfolio } from "@/utils/interface";
 import WhatICanBuild from "@/components/WhatICanBuild";
 
 export default async function Home() {
-  const portfolio = (await import("@/dummy.json")).default;
+  const portfolio = (await import("@/profile.json")).default;
 
   const {
     about,

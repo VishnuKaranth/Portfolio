@@ -31,7 +31,7 @@ const Loader = ({ setHideLoader }: PageLoadProps) => {
       animate={{ y: "-100%" }}
       transition={{ delay: 2.5, duration: 1, type: "tween" }}
       onAnimationComplete={() => setHideLoader(false)}
-      className="fixed top-0 left-0 z-9999 w-full h-full bg-background"
+      className="fixed top-0 left-0 z-9999 w-full h-full bg-background pointer-events-none"
     >
       <div className="p-4 md:p-10 flex flex-col md:justify-between max-md:gap-8 w-full h-full">
         <Transition transition={{ delay: 0.2 }}>

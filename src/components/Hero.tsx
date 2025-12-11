@@ -16,7 +16,7 @@ const Hero = ({ about }: HeroProps) => {
   return (
     <section className="h-dvh w-dvw overflow-hidden relative">
       <Transition>
-        <span className="blob size-1/2 absolute top-20 left-0 blur-[100px]" />
+        <span className="blob size-1/2 absolute top-20 left-0 blur-[100px] pointer-events-none" />
       </Transition>
       <LoaderWrapper>
         <div className="relative h-full w-full">
@@ -43,15 +43,30 @@ const Hero = ({ about }: HeroProps) => {
                 ))}
               </p>
             </Transition>
-            <Transition viewport={{ once: true }}>
-              <Link
-                href={"#contact"}
-                className="px-5 py-3 mt-4 rounded-full border border-white/50 flex items-center gap-2 group"
-              >
-                <TextReveal>Let&apos;s talk</TextReveal>
-                <ArrowUpRight />
-              </Link>
-            </Transition>
+            <Transition
+              viewport={{ once: true }}
+              className="flex items-center gap-4 mt-4 pointer-events-auto"
+            >
+            {/* Let's Talk */}
+            <Link
+              href={"#contact"}
+              className="px-5 py-3 rounded-full border border-white/50 flex items-center gap-2 group"
+            >
+              <TextReveal>Let&apos;s talk</TextReveal>
+              <ArrowUpRight />
+            </Link>
+            {/* Download Resume */}
+            <a
+              href={about.resume?.[0]?.url}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 rounded-full border border-white/50 flex items-center gap-2 group"
+            >
+              <TextReveal>Resume</TextReveal>
+              <ArrowUpRight />
+            </a>
+          </Transition>
           </div>
         </div>
       </LoaderWrapper>
