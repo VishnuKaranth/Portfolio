@@ -136,13 +136,41 @@
       "title": "Music Generator",
       "description": "A modern music generator web app built using Python, Next.js, AWS, and PostgreSQL.",
       "liveurl": "https://musicgenerator-phi.vercel.app/",
-      "githuburl": "#",
+      "githuburl": "https://github.com/VishnuKaranth/Music-Generator-AI",
       "techStack": ["Python", "Next.js", "AWS", "PostgreSQL"],
       "enabled": true,
       "sequence": 1,
       "image": {
         "public_id": "proid_1",
-        "url": "https://via.placeholder.com/400x250?text=Project"
+        "url": "https://profile-photos-vishnu.s3.ap-south-1.amazonaws.com/MusicGenPic.jpg"
+      }
+    },
+    {
+      "_id": "project_2",
+      "title": "Online Code Editor",
+      "description": "An Online Code Editor where an user can share, edit, and run code snippets in real-time.",
+      "liveurl": "https://prog-craft-code-editor.vercel.app/",
+      "githuburl": "https://github.com/VishnuKaranth/ProgCraft-Code-Editor",
+      "techStack": ["Next.js", "Convex DB", "Clerk", "TypeScript"],
+      "enabled": true,
+      "sequence": 2,
+      "image": {
+        "public_id": "proid_2",
+        "url": "https://profile-photos-vishnu.s3.ap-south-1.amazonaws.com/CodeEditPic.jpg"
+      }
+    },
+    {
+      "_id": "project_3",
+      "title": "Virtual Voice Assistant",
+      "description": "A Virtual Voice Assistant built using Python, Python Libraries, HuggingFace and Python GUI.",
+      "liveurl": "https://github.com/VishnuKaranth/AI-Chatbot",
+      "githuburl": "https://github.com/VishnuKaranth/AI-Chatbot",
+      "techStack": ["Python", "GUI", "Hugging Face"],
+      "enabled": true,
+      "sequence": 3,
+      "image": {
+        "public_id": "proid_3",
+        "url": "https://profile-photos-vishnu.s3.ap-south-1.amazonaws.com/VoiceAssPic.png"
       }
     }
   ],

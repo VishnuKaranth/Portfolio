@@ -39,33 +39,36 @@ const Contact = ({ email, social_handle, about }: ContactProps) => {
     };
     
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setStatus("SENDING");
+  e.preventDefault();
+  setStatus("SENDING");
 
-        try {
-            console.log("Form data:", formData);
-            setTimeout(() => {
-                setStatus("DONE");
-                setFormData({
-                    email: "",
-                    message: "",
-                    name: "",
-                    subject: "",
-                });
-                setStatusText("Message sent successfully!");
-            }, 3000);
-        }catch (error: unknown) {
-            if (error instanceof Error) {
-                setStatus("ERROR");
-                setStatusText("Error in sending message: " + error.message);
-                console.error("Error details: ", error.message);
-            }else{
-                setStatus("ERROR");
-                setStatusText("An unknown error occurred.");
-                console.error("Unknown error: ", error);
-            }
-        }
-    };
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      setStatus("DONE");
+      setStatusText("Message sent successfully!");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } else {
+      throw new Error(data.error || "Unknown error");
+    }
+  } catch (error: any) {
+    setStatus("ERROR");
+    setStatusText("Error sending message: " + error.message);
+  }
+};
+
     useEffect(() => {
         if (status === "DONE" || status === "ERROR") {
             const timer = setTimeout(() => {

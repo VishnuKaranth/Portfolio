@@ -38,7 +38,7 @@ const FunStats = ({ funStats }: { funStats: IFunStat[] }) => {
             <p className="text-white/60 text-lg">{stat.label}</p>
 
             {/* subtle glow effect */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-10 transition-opacity duration-300 bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
+            <div className="absolute inset-0 rounded-2xl opacity-0 hover:opacity-10 transition-opacity duration-300 bg-linear-to-br from-white/20 to-transparent pointer-events-none" />
           </motion.div>
         ))}
       </div>
