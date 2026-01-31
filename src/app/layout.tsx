@@ -21,7 +21,7 @@ export default function RootLayout({
       <body className={poppins.className}>
         
         <VariantProvider>
-      z {children}</VariantProvider>
+       {children}</VariantProvider>
       </body>
     </html>
   );
